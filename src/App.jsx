@@ -47,7 +47,7 @@ const Root = () => {
   return (
     <>
       <div className="hamburger flex justify-end z-10 relative">
-        <Hamburger toggled={isOpen} toggle={setOpen} />
+        <Hamburger color="#494B4D" toggled={isOpen} toggle={setOpen} />
       </div>
       {isOpen && (
         <div className="nav absolute w-full top-0 right-0 h-screen flex flex-col justify-center items-center z-0 bg-[#D9D9D9] ">
@@ -55,6 +55,13 @@ const Root = () => {
           <Link to="/portfolio">Portfolio</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/about">About</Link>
+          <div className="svg-image">
+            <img
+              src="../public/line2.png"
+              className="absolute left-0 bottom-0"
+              alt="svg-line"
+            />
+          </div>
         </div>
       )}
       <Outlet />

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Portfolio } from "./pages/Portfolio";
-import { Contact } from "./pages/Contact";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -25,25 +25,26 @@ function App() {
     )
   );
 
-  const Root = () => {
-    return (
-      <>
-        <div>
-          <Link to="/">Home</Link>
-          <Link to="/data">Data</Link>
-        </div>
-        <div>
-          <Outlet />
-        </div>
-      </>
-    );
-  };
-
   return (
     <>
-      <RouterProvider router={router} />
+      <section>
+        <RouterProvider router={router} />
+      </section>
     </>
   );
 }
+const Root = () => {
+  return (
+    <>
+      <div className="nav">
+        <Link to="/">Home</Link>
+        <Link to="/portfolio">Portfolio</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/about">About</Link>
+      </div>
+      <Outlet />
+    </>
+  );
+};
 
 export default App;

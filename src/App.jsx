@@ -41,7 +41,11 @@ const Root = () => {
         <Hamburger color="#494B4D" toggled={isOpen} toggle={setOpen} />
       </div>
       <div className="nav-lg lg:flex hidden justify-end mr-5 mt-10 ">
-        <Link className="text-[2.25rem] font-special m-5" to="/">
+        <Link
+          onClick={() => setOpen(!isOpen)}
+          className="text-[2.25rem] font-special m-5"
+          to="/"
+        >
           Home
         </Link>
         <Link className="text-[2.25rem] font-special m-5" to="/portfolio">

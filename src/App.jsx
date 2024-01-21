@@ -2,7 +2,6 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
 import { Turn as Hamburger } from "hamburger-react";
 import {
   createBrowserRouter,
@@ -12,14 +11,16 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
+import { MyContext } from "./store/MyContext";
+import { useContext } from "react";
 
 function App() {
+  const [isOpen, setOpen] = useState(false);
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Route>
     )
@@ -27,32 +28,29 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      <section className="content animate-fade">
+        <MyContext.Provider value={{ isOpen, setOpen }}>
+          <RouterProvider router={router} />
+        </MyContext.Provider>
+      </section>
     </>
   );
 }
 
 //Hamburger Menu styles and logic
 const Root = () => {
-  const [isOpen, setOpen] = useState(false);
+  const { isOpen, setOpen } = useContext(MyContext);
   return (
     <>
       <div className="hamburger absolute right-5 top-5 flex justify-end z-10 lg:hidden">
         <Hamburger color="#494B4D" toggled={isOpen} toggle={setOpen} />
       </div>
-      <div className="nav-lg lg:flex hidden justify-end mr-5 mt-10 ">
-        <Link
-          onClick={() => setOpen(!isOpen)}
-          className="text-[2.25rem] font-special m-5"
-          to="/"
-        >
+      <div className="nav-lg lg:flex hidden justify-end mr-5 mt-10  ">
+        <Link className="text-[2.25rem] font-special m-5" to="/">
           Home
         </Link>
         <Link className="text-[2.25rem] font-special m-5" to="/portfolio">
           Portfolio
-        </Link>
-        <Link className="text-[2.25rem] font-special m-5" to="/contact">
-          Contact
         </Link>
         <Link className="text-[2.25rem] font-special m-5" to="/about">
           About
@@ -63,16 +61,25 @@ const Root = () => {
           <div className="hamburger absolute right-5 top-5 flex justify-end z-10 lg:hidden">
             <Hamburger color="#494B4D" toggled={isOpen} toggle={setOpen} />
           </div>
-          <Link className="text-[3rem] font-special m-5" to="/">
+          <Link
+            onClick={() => setOpen(!isOpen)}
+            className="text-[3rem] font-special m-5"
+            to="/"
+          >
             Home
           </Link>
-          <Link className="text-[3rem] font-special m-5" to="/portfolio">
+          <Link
+            onClick={() => setOpen(!isOpen)}
+            className="text-[3rem] font-special m-5"
+            to="/portfolio"
+          >
             Portfolio
           </Link>
-          <Link className="text-[3rem] font-special m-5" to="/contact">
-            Contact
-          </Link>
-          <Link className="text-[3rem] font-special m-5" to="/about">
+          <Link
+            onClick={() => setOpen(!isOpen)}
+            className="text-[3rem] font-special m-5"
+            to="/about"
+          >
             About
           </Link>
           <div className="svg-image">

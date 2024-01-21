@@ -2,10 +2,12 @@ import Links from "../components/Links";
 import Heading from "../components/Heading";
 import HeroImage from "../components/HeroImage";
 
+import { TailSpin } from "react-loader-spinner";
+
 export default function Home() {
   return (
     <>
-      <main className="relative flex justify-center align-center w-full h-screen lg:h-[calc(100vh-135px)]  m-auto lg:block overflow-hidden z-[0]  ">
+      <main className="relative flex justify-center align-center w-full h-screen lg:h-[calc(100vh-135px)]  m-auto lg:block overflow-hidden z-[0]">
         <div className="container p-4 lg:pr-10 lg:pl-10    max-w-[425px] lg:w-full lg:max-w-5xl  2xl:max-w-7xl flex justify-center align-center flex-col m-auto  ">
           <div className="svg-image lg:hidden">
             <img

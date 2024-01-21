@@ -1,8 +1,13 @@
 import React from "react";
 import Project from "../components/Project";
+import { useContext } from "react";
+import { MyContext } from "../store/MyContext";
+
 export default function Portfolio() {
+  const { isOpen } = useContext(MyContext);
+
   return (
-    <main className="main mt-20 ">
+    <main className={`main mt-20 ${isOpen && "hidden"}`}>
       <h1 className="font-special text-[3rem] mb-10 text-center">Projects</h1>
       <section className="Portfolio lg:flex lg:flex-row lg:m-auto lg:justify-center">
         <Project

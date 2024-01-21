@@ -2,7 +2,7 @@ import React from "react";
 
 function Heading() {
   return (
-    <section className="heading">
+    <section className="heading ">
       <p className="text-[1.200rem] font-regular lg:text-[2.25rem] 2xl:text-[3rem]">
         Hello, I am Jakub.
       </p>

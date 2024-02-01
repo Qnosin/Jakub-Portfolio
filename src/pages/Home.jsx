@@ -2,7 +2,6 @@ import Links from "../components/Links";
 import Heading from "../components/Heading";
 import HeroImage from "../components/HeroImage";
 
-import { TailSpin } from "react-loader-spinner";
 
 export default function Home() {
   return (

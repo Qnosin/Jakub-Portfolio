@@ -25,18 +25,18 @@ export default function Portfolio() {
           desc={
             "A portfolio website, This project was mainly focus on estatic and design rather then coding and tech stack"
           }
-          link={"https://www.dmprusak.pl/"}
-          linkName={"dmprusak.pl"}
+          link={"https://prusak.net.pl/"}
+          linkName={"prusak.net.pl"}
         />
 
         <Project
           bgimg={"project3"}
           techimg={"tech-stack-3"}
           desc={
-            "A side project website, project to contact potentional customers"
+            "Website for my client, AJOD – Accounting in real estate, serves as a digital business card to highlight the company professional services"
           }
-          link={"https://webcord.pl/"}
-          linkName={"webcord.pl"}
+          link={"https://ajod.pl/"}
+          linkName={"ajod.pl"}
         />
       </section>
     </main>

@@ -29,7 +29,7 @@ export default function About() {
         <p className="text-center font-regular">
           👋 Hello there! I'm{" "}
           <span className="font-special text-xl ">Jakub</span>, a computer
-          science student and a front-end developer with a professional
+          science student and a php - web developer with a professional
           background as a tech support engineer. In my current role, I thrive on
           helping individuals navigate the intricate landscape of IT
           infrastructure, ensuring that their needs are not just met but truly

@@ -6,7 +6,7 @@ function HeroImage() {
   return (
     <section className="hero-image flex justify-between items-center mt-10 lg:mt-0 ">
       <img
-        className="hidden lg:block h-[250px] "
+        className="hidden lg:block h-[220px] "
         src="./public/myskilss.png"
         alt=""
       />

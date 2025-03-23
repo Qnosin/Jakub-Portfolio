@@ -9,7 +9,7 @@ export default function Portfolio() {
   return (
     <main className={`main mt-20 ${isOpen && "hidden"}`}>
       <h1 className="font-special text-[3rem] mb-10 text-center">Projects</h1>
-      <section className="Portfolio lg:flex lg:flex-row lg:m-auto lg:justify-center">
+      <section className="Portfolio lg:grid lg:grid-cols-2 lg:max-w-[1026px] lg:mx-auto ">
         <Project
           bgimg={"project1"}
           techimg={"tech-stack-1"}
@@ -37,6 +37,17 @@ export default function Portfolio() {
           }
           link={"https://ajod.pl/"}
           linkName={"ajod.pl"}
+        />
+
+
+        <Project
+          bgimg={"project4"}
+          techimg={"tech-stack-4"}
+          desc={
+            "This project is a custom CMS built with PHP, featuring a login and registration system along with full CRUD operations for managing posts"
+          }
+          link={"https://github.com/Qnosin/Procedural-CMS"}
+          linkName={"procedural-cms.com"}
         />
       </section>
     </main>
